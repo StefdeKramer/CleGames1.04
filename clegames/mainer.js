@@ -12,8 +12,6 @@ function init() {
 function clickHandler(e) {
     console.log("clicked " + e.currentTarget);
 
-    var square = new square();
-
     var square = createSquare();
     var square2 = createSquare();
 
