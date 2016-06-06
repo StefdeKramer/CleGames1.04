@@ -1,0 +1,40 @@
+body{
+    background-image: url("../fishgame/images/sealand.jpg");
+    background-size: 100%;
+    width:100%;
+}
+
+#level1{
+    height:13%;
+    width: 12%;
+    left:10%;
+    top:20%;
+    position:absolute;
+
+
+}
+#level2{
+    height:13%;
+    width: 12%;
+    left:30%;
+    top:20%;
+    position:absolute;
+
+
+}
+#level3{
+    height: 13%;
+    width: 12%;
+    left: 50%;
+    top: 20%;
+    position: absolute;
+
+}
+#level4{
+    height: 13%;
+    width: 12%;
+    left: 70%;
+    top: 20%;
+    position: absolute;
+
+}

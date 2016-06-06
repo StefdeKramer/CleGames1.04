@@ -1,0 +1,40 @@
+body{
+     background-image: url("../fishgame/images/evolution.jpg");
+     background-size: 100%;
+     width:100%;
+ }
+
+#singleplayer{
+    height:8%;
+    width: 15%;
+    left:41%;
+    top:10%;
+    position:absolute;
+
+
+}
+#multiplayer{
+    height:8%;
+    width: 15%;
+    left:41%;
+    top:20%;
+    position:absolute;
+
+
+}
+#highscores{
+    height:8%;
+    width: 15%;
+    left:41%;
+    top:30%;
+    position:absolute;
+
+}
+
+@media screen
+and (max-width: 900px) {
+    .body {
+
+        background-size:400px;
+    }
+}

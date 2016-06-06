@@ -1,0 +1,16 @@
+body {
+    background-image: url("Jungle-animal-across-the-bridge-Removable-cartoon-wall-sticker-for-children-room.jpg");
+    background-size: cover;
+
+}
+
+square {
+    background-color: red;
+
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
