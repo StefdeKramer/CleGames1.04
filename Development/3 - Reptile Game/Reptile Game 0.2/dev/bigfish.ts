@@ -5,7 +5,7 @@
 class BigFish extends GameObject {
     private randomDirection : number;
     private speed : number = 1;
-    private multiplier:number = (5*Math.random())+5;
+    private multiplier:number = (2.5*Math.random())+2.5;
     
     constructor(l:Level, x:number, y:number, width:number, height:number, tagName:string, fishNumber:number) {
         super(l, x, y, width, height, tagName);
@@ -25,8 +25,9 @@ class BigFish extends GameObject {
             else if(this.speed<1) this.speed+=0.1;
             if(this.x < 0 - this.width){
                 this.randomDirection=1;
-                this.y = (innerHeight-this.height)*Math.random();
-                this.multiplier=(5*Math.random())+5;
+                this.x=0-this.width;
+                this.y=innerHeight-innerHeight/3;
+                this.multiplier=(2.5*Math.random())+2.5;
             }
         }
         else{
@@ -35,8 +36,9 @@ class BigFish extends GameObject {
             else if(this.speed<1) this.speed+=0.1;
             if(this.x > innerWidth){
                 this.randomDirection=0;
-                this.y = (innerHeight-this.height)*Math.random();
-                this.multiplier=(5*Math.random())+5;
+                this.x=innerWidth+this.width;
+                this.y=innerHeight-innerHeight/3;
+                this.multiplier=(2.5*Math.random())+2.5;
             }
         }
     }

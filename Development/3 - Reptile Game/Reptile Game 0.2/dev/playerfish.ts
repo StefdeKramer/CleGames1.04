@@ -43,7 +43,7 @@ class Player extends GameObject {
     private onKeyDown(event:KeyboardEvent):void {
         switch(event.keyCode){
         case this.upKey:
-            this.upSpeed = -7.5;
+            this.upSpeed = -5;
             break;
         case this.downKey:
             this.downSpeed = 5;
@@ -76,7 +76,11 @@ class Player extends GameObject {
         }
     }
     
-    public update() : void {   
+    public update() : void {
+        if(this.y>=innerHeight-innerHeight/7){
+            this.leftSpeed=0;
+            this.rightSpeed=0;
+        }     
         if(this.x+this.leftSpeed<=0){
             this.leftSpeed=0;
         }

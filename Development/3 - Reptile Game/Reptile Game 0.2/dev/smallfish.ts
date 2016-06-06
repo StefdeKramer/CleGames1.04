@@ -40,7 +40,7 @@ class SmallFish extends GameObject {
                 this.multiplier=(5*Math.random())+2.5;
             }                    
                             
-            if(this.randomDirection<0.5){                        
+            if(this.randomDirection<0.5){                     
                 this.x-=this.multiplier*this.speed;
                 if(this.speed<0.25) this.speed+=0.001;
                 else if(this.speed<1) this.speed+=0.1;
@@ -58,7 +58,7 @@ class SmallFish extends GameObject {
                     this.x = 0-this.width;
                     this.y = (innerHeight-this.height)*Math.random();
                     this.multiplier=(5*Math.random())+2.5;
-                }
+                } 
             }
         }
         else{

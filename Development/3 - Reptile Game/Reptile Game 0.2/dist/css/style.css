@@ -41,12 +41,12 @@ smallfish {
 }
 
 bigfish {
-	width:425px; min-height:150px;
-	background-image: url('../images/bigfish.png');
+	width:307px; min-height:100px;
+	background-image: url('../images/snake.png');
 }
 
 star {
-	width:96px; min-hei: ;ght:96px;
+	width:96px; min-height:96px;
 	background-image: url('../images/star.jpg');
 }
 

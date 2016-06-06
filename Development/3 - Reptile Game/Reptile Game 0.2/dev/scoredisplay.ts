@@ -3,8 +3,8 @@
  */
 class ScoreDisplay {
     private score:number = 0;
-    private s1:number=0;
-    private s2:number=0;
+    private s1:number=100;
+    private s2:number=100;
     private level:Level;
     private div : Element;
     private div2 : Element;
@@ -15,8 +15,8 @@ class ScoreDisplay {
         this.div2 = document.getElementsByTagName("ui2")[0];
         this.div3 = document.getElementsByTagName("ui3")[0];
         this.level = l;
-        this.div.innerHTML = "0";
-        this.div2.innerHTML = "0";  
+        this.div.innerHTML = "100";
+        this.div2.innerHTML = "100";  
     }
     
     public updateScores(score:number, player:number){

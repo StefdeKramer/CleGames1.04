@@ -52,14 +52,12 @@ class Level {
         }
         
         this.bigFishes = new Array<BigFish>();
-        for(var i=1; i <= 0; i++){
-            let randomizerX : number = Math.random();
-            let randomizerY : number = Math.random();
+        for(var i=1; i <= 1; i++){
             
-            let width = 425;
-            let height = 150;
-            let x=(innerWidth-width)*randomizerX;
-            let y=innerHeight/2*randomizerY;
+            let width = 307;
+            let height = 100;
+            let x=0-width;
+            let y=innerHeight-innerHeight/10;
 
             this.bigFishes.push(new BigFish(this, x, y, width, height, "bigfish", i));
         }
@@ -113,8 +111,8 @@ class Level {
         }
         
         let groundY = innerHeight-innerHeight/4;
-        let leftX = innerWidth/4;
-        let rightX = innerWidth/4*3
+        let leftX = innerWidth/2;
+        let rightX = innerWidth/4*3;
 
         this.player = new Player(this, leftX, groundY, 149, 61, "playerfish", 1);
         this.player2 = new Player(this, rightX, groundY, 149, 61, "playerfish2", 2);

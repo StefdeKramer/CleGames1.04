@@ -66,7 +66,7 @@ var BigFish = (function (_super) {
     function BigFish(l, x, y, width, height, tagName, fishNumber) {
         _super.call(this, l, x, y, width, height, tagName);
         this.speed = 1;
-        this.multiplier = (5 * Math.random()) + 5;
+        this.multiplier = (2.5 * Math.random()) + 2.5;
         if (fishNumber % 2 == 0) {
             this.randomDirection = 1;
         }
@@ -83,8 +83,9 @@ var BigFish = (function (_super) {
                 this.speed += 0.1;
             if (this.x < 0 - this.width) {
                 this.randomDirection = 1;
-                this.y = (innerHeight - this.height) * Math.random();
-                this.multiplier = (5 * Math.random()) + 5;
+                this.x = 0 - this.width;
+                this.y = innerHeight - innerHeight / 3;
+                this.multiplier = (2.5 * Math.random()) + 2.5;
             }
         }
         else {
@@ -95,8 +96,9 @@ var BigFish = (function (_super) {
                 this.speed += 0.1;
             if (this.x > innerWidth) {
                 this.randomDirection = 0;
-                this.y = (innerHeight - this.height) * Math.random();
-                this.multiplier = (5 * Math.random()) + 5;
+                this.x = innerWidth + this.width;
+                this.y = innerHeight - innerHeight / 3;
+                this.multiplier = (2.5 * Math.random()) + 2.5;
             }
         }
     };
@@ -248,7 +250,7 @@ var Player = (function (_super) {
     Player.prototype.onKeyDown = function (event) {
         switch (event.keyCode) {
             case this.upKey:
-                this.upSpeed = -7.5;
+                this.upSpeed = -5;
                 break;
             case this.downKey:
                 this.downSpeed = 5;
@@ -280,6 +282,10 @@ var Player = (function (_super) {
         }
     };
     Player.prototype.update = function () {
+        if (this.y >= innerHeight - innerHeight / 7) {
+            this.leftSpeed = 0;
+            this.rightSpeed = 0;
+        }
         if (this.x + this.leftSpeed <= 0) {
             this.leftSpeed = 0;
         }
@@ -372,13 +378,11 @@ var Level = (function () {
             this.smallFishes.push(new SmallFish(this, x, y, width, height, "smallfish", randomizerX, boost));
         }
         this.bigFishes = new Array();
-        for (var i = 1; i <= 0; i++) {
-            var randomizerX = Math.random();
-            var randomizerY = Math.random();
-            var width = 425;
-            var height = 150;
-            var x = (innerWidth - width) * randomizerX;
-            var y = innerHeight / 2 * randomizerY;
+        for (var i = 1; i <= 1; i++) {
+            var width = 307;
+            var height = 100;
+            var x = 0 - width;
+            var y = innerHeight - innerHeight / 10;
             this.bigFishes.push(new BigFish(this, x, y, width, height, "bigfish", i));
         }
         this.boxes = new Array();
@@ -426,7 +430,7 @@ var Level = (function () {
             this.boxes.push(new Box(this, randomX, randomY, width, height, type));
         }
         var groundY = innerHeight - innerHeight / 4;
-        var leftX = innerWidth / 4;
+        var leftX = innerWidth / 2;
         var rightX = innerWidth / 4 * 3;
         this.player = new Player(this, leftX, groundY, 149, 61, "playerfish", 1);
         this.player2 = new Player(this, rightX, groundY, 149, 61, "playerfish2", 2);
@@ -697,14 +701,14 @@ var Rectangle = (function () {
 var ScoreDisplay = (function () {
     function ScoreDisplay(l) {
         this.score = 0;
-        this.s1 = 0;
-        this.s2 = 0;
+        this.s1 = 100;
+        this.s2 = 100;
         this.div = document.getElementsByTagName("ui")[0];
         this.div2 = document.getElementsByTagName("ui2")[0];
         this.div3 = document.getElementsByTagName("ui3")[0];
         this.level = l;
-        this.div.innerHTML = "0";
-        this.div2.innerHTML = "0";
+        this.div.innerHTML = "100";
+        this.div2.innerHTML = "100";
     }
     ScoreDisplay.prototype.updateScores = function (score, player) {
         if (player == 1) {
